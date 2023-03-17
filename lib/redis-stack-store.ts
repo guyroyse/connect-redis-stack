@@ -42,7 +42,14 @@ export class RedisStackStore extends Store {
   }
 
   destroy(sid: string, callback?: (err?: any) => void): void {
-    throw "Not implemented"
+    (async () => {
+      try {
+        await this.#asyncStore.destroy(sid)
+        callback?.()
+      } catch(error) {
+        callback?.(error)
+      }
+    })()
   }
 
   touch(sid: string, session: any, callback?: (err?: any) => void): void  {
@@ -85,6 +92,11 @@ class RedisStackAsyncStore {
     const keyName = this.#keyName(sid)
     await this.#redis.json.set(keyName, '$', session)
     if (this.#ttl !== undefined) await this.#redis.expire(keyName, this.#ttl)
+  }
+
+  async destroy(sid: string): Promise<void> {
+    const keyName = this.#keyName(sid)
+    await this.#redis.unlink(keyName)
   }
 
   #keyName(sid: string) {
