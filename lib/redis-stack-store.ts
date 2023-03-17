@@ -53,7 +53,14 @@ export class RedisStackStore extends Store {
   }
 
   touch(sid: string, session: any, callback?: (err?: any) => void): void  {
-    throw "Not implemented"
+    (async () => {
+      try {
+        await this.#asyncStore.touch(sid, session)
+        callback?.()
+      } catch(error) {
+        callback?.(error)
+      }
+    })()
   }
 
   all(callback: (err: any, obj?: any[] | { [sid: string]: any } | null) => void): void {
@@ -97,6 +104,13 @@ class RedisStackAsyncStore {
   async destroy(sid: string): Promise<void> {
     const keyName = this.#keyName(sid)
     await this.#redis.unlink(keyName)
+  }
+
+  async touch(sid: string, session: any): Promise<void> {
+    if (this.#ttl !== undefined) {
+      const keyName = this.#keyName(sid)
+      await this.#redis.expire(keyName, this.#ttl)
+    }
   }
 
   #keyName(sid: string) {

@@ -10,7 +10,6 @@ describe("RedisStackStore", () => {
   let subject: RedisStackStore
   let redis: RedisClient
 
-  // this just creates a mocked Redis client
   beforeEach(() => { redis = createClient() })
 
   describe("#get", () => {
