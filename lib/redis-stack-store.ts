@@ -62,19 +62,6 @@ export class RedisStackStore extends Store {
       }
     })()
   }
-
-  all(callback: (err: any, obj?: any[] | { [sid: string]: any } | null) => void): void {
-    throw "Not implemented"
-  }
-
-  clear(callback?: (err?: any) => void): void {
-    throw "Not implemented"
-  }
-
-  length(callback: (err: any, length?: number) => void): void {
-    throw "Not implemented"
-  }
-
 }
 
 class RedisStackAsyncStore {
