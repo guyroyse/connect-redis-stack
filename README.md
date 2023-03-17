@@ -1,6 +1,6 @@
 # Connect Redis Stack
 
-_Connect Redis Stack_ provides [Redis](https://redis.io/) session storage for your [Express}(https://expressjs.com/) applications using the JSON capabilites of [Redis Stack](https://redis.io/docs/stack/).
+_Connect Redis Stack_ provides [Redis](https://redis.io/) session storage for your [Express](https://expressjs.com/) applications using the JSON capabilites of [Redis Stack](https://redis.io/docs/stack/).
 
 ## Installation
 
