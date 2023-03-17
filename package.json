@@ -1,0 +1,40 @@
+{
+  "name": "connect-redis-stack",
+  "version": "0.0.1",
+  "description": "A session store for express-session that uses Node Redis and Redis Stack to store session data.",
+  "main": "dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "README.md",
+    "CHANGELOG",
+    "LICENSE",
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "test": "vitest"
+  },
+  "tsup": {
+    "entry": [
+      "lib/index.ts"
+    ],
+    "clean": true,
+    "dts": true
+  },
+  "repository": "github:guyroyse/connect-redis-stack",
+  "homepage": "https://github.com/guyroyse/connect-redis-stack#readme",
+  "license": "MIT",
+  "author": "Guy Royse <guy@guyroyse.com> (http://guyroyse.com/)",
+  "devDependencies": {
+    "@types/express-session": "^1.17.6",
+    "express-session": "^1.17.3",
+    "redis": "^4.6.5",
+    "tsup": "^6.6.3",
+    "typescript": "^4.9.5",
+    "vitest": "^0.29.2"
+  },
+  "peerDependencies": {
+    "express-session": ">=1",
+    "redis": ">=4"
+  }
+}

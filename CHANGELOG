@@ -1,0 +1,10 @@
+# Changelog
+
+*Functional* changes to the public interface of Connect RedisJSON will be listed here, by version. *Non-functional* changes may also be included, if they are particulary noteworthy or might impact developers using Connect RedisJSON.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and COnnect RedisJSON adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+
+## 0.1.0 - TBD
+### Added
+- Initial release.
