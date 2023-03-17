@@ -53,13 +53,16 @@ app.use(
 app.get('/write', (req, res) => {
   req.session.someSessionData = { alfa: 'foo', bravo: 42 }
   req.session.moreSessionData = [ 'alfa', 'bravo', 'charlie' ]
-  res.send('Stuff was written to your session')
+  res.send('Stuff was written to your session.')
 })
 
 /* read from the session */
 app.get('/read', (req, res) => {
   const someData = req.session.someSessionData
   const moreData = req.session.moreSessionData
-  res.send('Stuff was read from your session:', someData, moreData)
+  res.send('Stuff was read from your session.')
 })
+
+/* start the  app */
+app.listen(8080, () => console.log(`Example app listening on port 8080`))
 ```
