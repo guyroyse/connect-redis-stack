@@ -4,7 +4,7 @@ _Connect Redis Stack_ provides [Redis](https://redis.io/) session storage for yo
 
 ## Installation
 
-Installation is a breeze but _Connect Redis Stack_ assumes that you already have [redis](https://www.npmjs.com/package/redis)—version 4 or greater—and [express-session](https://www.npmjs.com/package/express-session) installed. And, of course, it assumes you're building an Express application. So you probably should [express](https://www.npmjs.com/package/express) installed too.
+Installation is a breeze but _Connect Redis Stack_ assumes that you already have [redis](https://www.npmjs.com/package/redis)—version 4 or greater—and [express-session](https://www.npmjs.com/package/express-session) installed. And, of course, it assumes you're building an Express application. So you probably should have [express](https://www.npmjs.com/package/express) installed too.
 
 To install the Redis bits, just do the following:
 
